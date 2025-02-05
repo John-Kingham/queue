@@ -27,3 +27,8 @@ class TestQueue(unittest.TestCase):
         self.assertIsNone(q.dequeue())
         q.enqueue(1)
         self.assertEqual(q.dequeue(), 1)
+        q.enqueue(1)
+        q.enqueue(2)
+        self.assertEqual(q.dequeue(), 1)
+        self.assertEqual(q.dequeue(), 2)
+        self.assertEqual(q.get_size(), 0)

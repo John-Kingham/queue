@@ -18,6 +18,12 @@ class TestQueue(unittest.TestCase):
 
     def test_peek(self):
         q = Queue()
-        self.assertEqual(q.peek(), None)
+        self.assertIsNone(q.peek())
         q.enqueue(1)
         self.assertEqual(q.peek(), 1)    
+
+    def test_dequeue(self):
+        q = Queue()
+        self.assertIsNone(q.dequeue())
+        q.enqueue(1)
+        self.assertEqual(q.dequeue(), 1)

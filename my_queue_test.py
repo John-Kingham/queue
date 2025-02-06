@@ -32,3 +32,10 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(q.dequeue(), 1)
         self.assertEqual(q.dequeue(), 2)
         self.assertEqual(q.get_size(), 0)
+
+    def test_max_size(self):
+        max_size = 1
+        q = Queue(max_size)
+        q.enqueue(1)
+        q.enqueue(2)
+        self.assertEqual(q.get_size(), 1)
